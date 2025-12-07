@@ -1,104 +1,99 @@
-    1  ^M
-    2  sudo wget https://archive.kali.org/archive-keyring.gpg -O /usr/share/keyrings/kali-archive-keyring.gpg
-    3  sudo apt update && sudo apt upgrade -y
-    4  apt install beef-xss -y
-    5  sudo apt install beef-xss -y
-    6  apt install libsqlite3-dev
-    7  sudo apt install libsqlite3-dev
-    8  sudo gem install sqlite -v ‘1.4.2’ --source ‘htts://rubygems.org/’
-    9  sudo gem install sqlite -v '1.4.2' --source 'https://rubygems.org/'
-   10  sudo gem install sqlite3\n
-   11  usr/shared/beef-xss$ bundle
-   12  sudo gem install bundler
-   13  sudo apt install ruby ruby-dev build-essential
-   14  bundle install
-   15  usr/shared/beef-xss$ bundle
-   16  sudo gem install bundler\n
-   17  bundle -v\n
-   18  sudo apt update
-   19  cd /usr/share/beef-xss\n
-   20  ls
-   21  bundle install\n
-   22  sudo bundle install\n
-   23  bundle lock\n
-   24  bundle install\n
-   25  bundle config unset frozen\n
-   26  sudo bundle lock\n
-   27  bundle install\n
-   28  vi /usr/share/beef-xss/config.yaml
-   29  sudo nano /usr/share/beef-xss/config.yaml
-   30  ./beef
-   31  /usr/share/beef-xss
-   32  ls
-   33  ./beef
-   34  sudo gem install msgpack\n
-   35  ./beef\n
-   36  bundle config unset frozen
-   37  sudo bundle config unset frozen
-   38  bundle install
-   39  sudo gem install rake -v 13.3.1\n
-   40  bundle install\n
-   41  bundle config unset deployment
-   42  bundle config unset frozen
-   43  bundle install
-   44  sudo gem install rake
-   45  bundle install\n
-   46  cd ~
-   47  git clone https://github.com/beefproject/beef
-   48  cd beef
-   49  sudo apt update
-   50  sudo apt install ruby ruby-dev build-essential libsqlite3-dev libssl-dev libxml2-dev libxslt1-dev zlib1g-dev
-   51  ./beef\n
-   52  sudo gem install bundler
-   53  bundle install
-   54  ./beef\n
-   55  ruby -v\n
-   56  sudo apt install -y build-essential libssl-dev libreadline-dev zlib1g-dev
-   57  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-   58  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-   59  echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc
-   60  source ~/.bashrc
-   61  sudo 
-   62  sudo source ~/.bashrc
-   63  git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-   64  rbenv install 3.2.2
-   65  rbenv global 3.2.2
-   66  ruby -v\n
-   67  rbenv install 3.2.2
-   68  rbenv global 3.2.2
-   69  ruby -v
-   70  echo $PATH
-   71  which ruby
-   72  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-   73  echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc
-   74  source ~/.bashrc
-   75  echo $SHELL\n
-   76  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
-   77  echo 'eval "$(rbenv init - zsh)"' >> ~/.zshrc
-   78  source ~/.zshrc
-   79  which ruby
-   80  ruby -v
-   81  cd ~/beef
-   82  gem install bundler
-   83  bundle install
-   84  rbenv install 3.4.7
-   85  rbenv local 3.4.7
-   86  rbenv global 3.4.7
-   87  rbenv rehash
-   88  gem install bundler
-   89  bundle install
-   90  ./beef
-   91  nano ~/beef/config.yaml
-   92  ./beef
-   93  ip as
-   94  ip a
-   95  cd beef
-   96  nano config.yaml
-   97  ssh team7-blue@n.0g.rip -p 2222
-   98  ipconfig
-   99  ip a
-  100  sudo systemctl restart NetworkManager
-  101  ip a
-  102  nano ~/beef/config.yaml
-  103  ls
-  104  history
+sudo wget https://archive.kali.org/archive-keyring.gpg -O /usr/share/keyrings/kali-archive-keyring.gpg
+sudo apt update && sudo apt upgrade -y
+apt install beef-xss -y
+sudo apt install beef-xss -y
+apt install libsqlite3-dev
+sudo apt install libsqlite3-dev
+sudo gem install sqlite -v ‘1.4.2’ --source ‘htts://rubygems.org/’
+sudo gem install sqlite -v '1.4.2' --source 'https://rubygems.org/'
+sudo gem install sqlite3
+usr/shared/beef-xss$ bundle
+sudo gem install bundler
+sudo apt install ruby ruby-dev build-essential
+bundle install
+usr/shared/beef-xss$ bundle
+sudo gem install bundler
+bundle -v
+sudo apt update
+cd /usr/share/beef-xss
+ls
+bundle install
+sudo bundle install
+bundle lock
+bundle install
+bundle config unset frozen
+sudo bundle lock
+bundle install
+vi /usr/share/beef-xss/config.yaml
+sudo nano /usr/share/beef-xss/config.yaml
+./beef
+/usr/share/beef-xss
+ls
+./beef
+sudo gem install msgpack
+./beef
+bundle config unset frozen
+sudo bundle config unset frozen
+bundle install
+sudo gem install rake -v 13.3.1
+bundle install
+bundle config unset deployment
+bundle config unset frozen
+bundle install
+sudo gem install rake
+bundle install
+cd ~
+git clone https://github.com/beefproject/beef
+cd beef
+sudo apt update
+sudo apt install ruby ruby-dev build-essential libsqlite3-dev libssl-dev libxml2-dev libxslt1-dev zlib1g-dev
+./beef
+sudo gem install bundler
+bundle install
+./beef
+ruby -v
+sudo apt install -y build-essential libssl-dev libreadline-dev zlib1g-dev
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc
+source ~/.bashrc
+sudo source ~/.bashrc
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+rbenv install 3.2.2
+rbenv global 3.2.2
+ruby -v\n
+rbenv install 3.2.2
+rbenv global 3.2.2
+ruby -v
+echo $PATH
+which ruby
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc
+source ~/.bashrc
+echo $SHELL
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(rbenv init - zsh)"' >> ~/.zshrc
+source ~/.zshrc
+which ruby
+ruby -v
+cd ~/beef
+gem install bundler
+bundle install
+rbenv install 3.4.7
+rbenv local 3.4.7
+rbenv global 3.4.7
+rbenv rehash
+gem install bundler
+bundle install
+./beef
+nano ~/beef/config.yaml
+./beef
+ip as
+ip a
+cd beef
+nano config.yaml
+ip a
+sudo systemctl restart NetworkManager
+ip a
+nano ~/beef/config.yaml
+ls
