@@ -194,11 +194,10 @@ As soon as I opened the file on the victim PC, the browser appeared as **hooked*
 ### Screenshots
 Here are screenshots from the Beef server, including topology.
 
-```markdown
 ![Browser Info](images/browserInfo.png)
 ![Geolocation](images/geolocation.png)
 ![Hooked Browser](images/hooked.png)
 ![Logs](images/logs.png)
 ![Man in the Browser](images/MitB.png)
 ![Topology](images/topology.png)
-```
+
