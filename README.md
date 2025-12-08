@@ -23,7 +23,7 @@ sudo apt update && sudo apt upgrade -y
 I worked on Linux for this lab since it’s officially supported. Here’s what I did step by step.
 
 ### Tried installing beef directly from the repo (led to dependency issues)
-At first I tried using the package version of beef, which triggered Ruby and SQLite dependency errors.
+I saw this [slideshow](https://owasp.org/www-chapter-sacramento/assets/slides/20200221-intro-to-beef.pdf) that made installation look easy, so I tried using the package version of beef, which triggered Ruby and SQLite dependency errors.
 
 ```bash
 sudo apt install beef-xss -y
@@ -41,7 +41,8 @@ bundle install
 sudo bundle install
 ```
 
-Various (unsuccessful) attempts to fix frozen or locked bundle configs:
+Various unsuccessful attempts to fix frozen or locked bundle configs:
+*I think this was mostly just a slew of reading error messages and throwing random things at it till I gave up*
 
 ```bash
 bundle config unset frozen
@@ -56,7 +57,7 @@ sudo gem install rake
 ```
 
 ### 2. Cloned Beef manually instead (cleaner route)
-I grabbed the source directly from GitHub and started fresh.
+I grabbed the source directly from [GitHub](https://github.com/beefproject/beef) and started fresh.
 
 ```bash
 cd ~
@@ -78,7 +79,7 @@ bundle install
 Still had Ruby version problems.
 
 ### 3. Installed rbenv and built proper Ruby versions
-At this point, I installed rbenv so I could build a Ruby version that Beef actually supports.
+At this point, I installed rbenv so I could build a Ruby version that Beef actually supports. [Here is a guide I half read](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-20-04)
 
 ```bash
 sudo apt install -y build-essential libssl-dev libreadline-dev zlib1g-dev
@@ -218,4 +219,4 @@ I tried the Man‑in‑the‑Browser module to see how BeEF can interact with or
 ![Man in the Browser](images/MitB.png)
 
 
-If you read down to here, thanks for following the walkthrough. Praise be Phil, and praise be autocorrect actually working in markdown.
+*If you read down to here, thanks for following the walkthrough. Praise be Phil, and praise be autocorrect actually working in markdown.*
