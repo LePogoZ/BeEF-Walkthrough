@@ -198,19 +198,23 @@ This is what the topology looks like, *from beef gui*
 ## BeEf Usage
 
 ### General Information From the Hooked Browser
-Once the victim's browser loaded my hooked page, it appeared in the BeEF panel, and I was able to see general details about the system and browser. This included things like the browser version, OS information, plugins, and other metadata that confirmed the hook was working.
+Once the victim's browser loaded my hooked page, it appeared in the BeEF panel, and I could see general details about the system and the browser. This included browser version, OS information, plugins, and other metadata that confirmed the hook was working.
+
 ![Browser Info](images/browserInfo.png)
 
 ### Geolocation Data
 I also tested the geolocation module. BeEF can estimate the victim’s location using their IP address, which gives a rough idea of where the machine is connecting from.
+
 ![Geolocation](images/geolocation.png)
 
 ### Logs and Command Activity
 BeEF keeps a record of all modules run and their outputs. These logs make it easy to review what I executed on the browser and verify whether each action actually succeeded.
+
 ![Logs](images/logs.png)
 
 ### Man in the Browser Module
 I tried the Man‑in‑the‑Browser module to see how BeEF can interact with or modify content inside the user’s session. This shows just how much control you can gain once a browser is hooked.
+
 ![Man in the Browser](images/MitB.png)
 
 
