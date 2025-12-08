@@ -189,15 +189,29 @@ All the browser has to do is load that one script tag:
 http://192.168.40.132:3000/hook.js
 ```
 
-As soon as I opened the file on the victim PC, the browser appeared as **hooked** inside the Beef UI, and I could start running modules on it.
-
-### Screenshots
-Here are screenshots from the Beef server, including topology.
-
-![Browser Info](images/browserInfo.png)
-![Geolocation](images/geolocation.png)
+As soon as I opened the file on the victim PC, the browser appeared as hooked inside the Beef UI, and I could start running modules on it.
 ![Hooked Browser](images/hooked.png)
-![Logs](images/logs.png)
-![Man in the Browser](images/MitB.png)
+
+This is what the topology looks like, *from beef gui*
 ![Topology](images/topology.png)
 
+## BeEf Usage
+
+### General Information From the Hooked Browser
+Once the victim's browser loaded my hooked page, it appeared in the BeEF panel, and I was able to see general details about the system and browser. This included things like the browser version, OS information, plugins, and other metadata that confirmed the hook was working.
+![Browser Info](images/browserInfo.png)
+
+### Geolocation Data
+I also tested the geolocation module. BeEF can estimate the victim’s location using their IP address, which gives a rough idea of where the machine is connecting from.
+![Geolocation](images/geolocation.png)
+
+### Logs and Command Activity
+BeEF keeps a record of all modules run and their outputs. These logs make it easy to review what I executed on the browser and verify whether each action actually succeeded.
+![Logs](images/logs.png)
+
+### Man in the Browser Module
+I tried the Man‑in‑the‑Browser module to see how BeEF can interact with or modify content inside the user’s session. This shows just how much control you can gain once a browser is hooked.
+![Man in the Browser](images/MitB.png)
+
+
+If you read down to here, thanks for following the walkthrough. Praise be Phil, and praise be autocorrect actually working in markdown.
