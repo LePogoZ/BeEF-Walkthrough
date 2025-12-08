@@ -191,9 +191,11 @@ http://192.168.40.132:3000/hook.js
 ```
 
 As soon as I opened the file on the victim PC, the browser appeared as hooked inside the Beef UI, and I could start running modules on it.
+
 ![Hooked Browser](images/hooked.png)
 
 This is what the topology looks like, *from beef gui*
+
 ![Topology](images/topology.png)
 
 ## BeEf Usage
