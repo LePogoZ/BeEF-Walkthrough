@@ -10,90 +10,155 @@ For more info: [Introducing BeEF](https://github.com/beefproject/beef/wiki/Intro
 
 ---
 
+## Prepping KaliVM
+I started by adding the missing Kali archive key, then did a full update so the VM had fresh package lists.
+
+```bash
+sudo wget https://archive.kali.org/archive-keyring.gpg -O /usr/share/keyrings/kali-archive-keyring.gpg
+sudo apt update && sudo apt upgrade -y
+```
+
 ## Setting Up BeEF
 
 I worked on Linux for this lab since it’s officially supported. Here’s what I did step by step.
 
-### 1. Installing Prerequisites
-
-BeEF needs **Ruby 3.0+** and **Bundler**. I installed them like this:
+### Tried installing beef directly from the repo (led to dependency issues)
+At first I tried using the package version of beef, which triggered Ruby and SQLite dependency errors.
 
 ```bash
-# Install Bundler
-gem install bundler
+sudo apt install beef-xss -y
+sudo apt install libsqlite3-dev -y
+sudo gem install sqlite -v '1.4.2' --source 'https://rubygems.org/'
+sudo gem install sqlite3
+sudo gem install bundler
+```
+I also attempted to run bundle inside the packaged beef folder:
+
+```bash
+cd /usr/share/beef-xss
+bundle
+bundle install
+sudo bundle install
 ```
 
-### 2. Getting the BeEF Code
-
-You can grab BeEF either by downloading a zip:
+Various (unsuccessful) attempts to fix frozen or locked bundle configs:
 
 ```bash
-wget https://github.com/beefproject/beef/archive/master.zip
+bundle config unset frozen
+sudo bundle config unset frozen
+bundle config unset deployment
+bundle lock
+sudo bundle lock
+bundle install
+sudo gem install msgpack
+sudo gem install rake -v 13.3.1
+sudo gem install rake
 ```
 
-Or cloning the repo:
+### 2. Cloned Beef manually instead (cleaner route)
+I grabbed the source directly from GitHub and started fresh.
 
 ```bash
+cd ~
 git clone https://github.com/beefproject/beef
+cd beef
+sudo apt update
+sudo apt install ruby ruby-dev build-essential libsqlite3-dev libssl-dev libxml2-dev libxslt1-dev zlib1g-dev -y
 ```
 
-### 3. Installing BeEF
-
-After getting the code, I ran the install script:
+Tried running it:
 
 ```bash
-./install
+./beef
+sudo gem install bundler
+bundle install
+./beef
 ```
 
-This installed all the necessary dependencies, including NodeJS and Ruby gems.
+Still had Ruby version problems.
 
----
+### 3. Installed rbenv and built proper Ruby versions
+At this point, I installed rbenv so I could build a Ruby version that Beef actually supports.
 
-## Starting BeEF
+```bash
+sudo apt install -y build-essential libssl-dev libreadline-dev zlib1g-dev
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc
+source ~/.bashrc
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+```
 
-Before starting, I updated the default username and password in `config.yaml`. Then I ran:
+Built Ruby versions until one worked cleanly:
+
+```bash
+rbenv install 3.2.2
+rbenv global 3.2.2
+ruby -v
+```
+
+Set the paths again just to be sure:
+
+```bash
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Also updated Zsh since the VM switched shells:
+
+```bash
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(rbenv init - zsh)"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+Checked Ruby:
+
+```bash
+which ruby
+ruby -v
+```
+
+### 5. Installed bundler and dependencies using rbenv Ruby
+Then I reinstalled Bundler under the correct Ruby environment and installed Beef’s dependencies properly.
+
+```bash
+cd ~/beef
+gem install bundler
+bundle install
+```
+
+Eventually, I moved to a newer Ruby version for compatibility:
+
+```bash
+rbenv install 3.4.7
+rbenv local 3.4.7
+rbenv global 3.4.7
+rbenv rehash
+gem install bundler
+bundle install
+```
+
+## 6. Launched Beef and edited the config
+Finally, after fixing all version issues, Beef launched successfully.
 
 ```bash
 ./beef
 ```
 
-The console started and I could see the dashboard running.
-
----
-
-## Testing (Optional)
-
-To test the setup, I installed a few extra packages:
+Edited config while testing:
 
 ```bash
-sudo apt-get install espeak lame
-bundle install --with test
+nano ~/beef/config.yaml
+./beef
 ```
 
-And ran the test suite:
+Checked network info:
 
 ```bash
-bundle exec rake
+ip a
 ```
-
----
-
-## Updating BeEF
-
-Since browsers update fast, it’s a good idea to keep BeEF up to date. I did it like this:
-
-```bash
-./update-beef
-```
-
-Or manually:
-
-```bash
-git pull
-bundle install
-```
-
----
 
 ## Hooking a Browser
 
